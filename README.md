@@ -9,3 +9,10 @@ last_team.txt : 같은조에 배정하지 않을 사람들
 naming.txt : 참여 인원
 
 ※ 데이터 포맷 : 로우데이터.xlsx를 참고
+
+## 실행
+
+- 사용 자바 버전 : openjdk 22.0.1
+```
+java -jar team_maker.jar
+```
