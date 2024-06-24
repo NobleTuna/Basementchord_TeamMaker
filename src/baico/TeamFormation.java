@@ -10,15 +10,16 @@ public class TeamFormation {
 	static int[][] couples; // 커플 정보
 	static int[] admins; // 운영진 정보
 	static int[] liveLevelSum; // dfs에서 각 팀의 점수합을 들고다닐 배열
-	static int teamCount = 5; // 팀의 갯수
-	static int maxMember = 6; // 각 팀의 최대 인원 수
-	static int minMember = 5; // 각 팀의 최소 인원 수
+	static int teamCount; // 팀의 갯수
+	static int maxMember; // 각 팀의 최대 인원 수
+	static int minMember; // 각 팀의 최소 인원 수
 	static List<String[][]> results = new ArrayList<>(); // 결과를 저장할 리스트
 	static Map<String, Boolean> memo = new HashMap<>(); // 메모이제이션을 위한 맵
 	static int avgLevel; // 평균레벨
 	static int range = 1; // 가능 오차
 
 	public static void main(String[] args) {
+
 		try {
 			// 파일에서 데이터를 읽어오는 부분
 			names = readNames("naming.txt");
@@ -32,6 +33,15 @@ public class TeamFormation {
 		}
 
 		shuffleData();
+
+		teamCount = 0;
+		for (int i = 0; i < names.length; i++) {
+			if (admins[i] == 1)
+				teamCount++;
+		}
+
+		minMember = names.length / teamCount;
+		maxMember = minMember + 1;
 
 		List<List<Integer>> teams = new ArrayList<>();
 		for (int i = 0; i < teamCount; i++) {
