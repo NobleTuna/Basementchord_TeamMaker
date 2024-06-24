@@ -12,7 +12,7 @@
 
 ## 실행
 
-- 사용 자바 버전 : openjdk 22.0.1
+- 자바 버전 : openjdk 22.0.1
 ```
 java -jar team_maker.jar
 ```
